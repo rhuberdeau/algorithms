@@ -38,6 +38,13 @@ RSpec.describe PeakFinder do
     end
   end
 
+  context "n/2 is the peak" do 
+    it "returns n/2" do 
+      peak_finder = PeakFinder.new([2,2,9,2,2])
+      expect(peak_finder.peak).to eql(9)
+    end
+  end
+
   context "all the numbers in the array are the same" do 
     it "returns no peak" do 
       peak_finder = PeakFinder.new([2,2,2,2,2,2,2])

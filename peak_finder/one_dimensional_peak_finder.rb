@@ -1,11 +1,16 @@
 class PeakFinder
   attr_reader :array
+
   def initialize(array)
     @array = array
   end
 
   def peak
     return "no peak" if array.uniq.length == 1
+    if array[array.length/2] > array[array.length/2 - 1] && array[array.length/2] > array[array.length/2 + 1]
+      return array[array.length/2]
+    end
+
     left_array  = array[0..array.length/2 - 1]
     right_array = array[array.length/2+1..array.length-1]
     left        = find_peak(left_array)
