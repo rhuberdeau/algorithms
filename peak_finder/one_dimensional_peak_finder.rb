@@ -10,6 +10,8 @@ class PeakFinder
     right_array = array[array.length/2+1..array.length-1]
     left        = find_peak(left_array)
     right       = find_peak(right_array)
+
+    return "peak on both sides: #{left}" if left == right
     left > right ? left : right
   end
 

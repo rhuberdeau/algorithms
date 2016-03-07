@@ -44,4 +44,11 @@ RSpec.describe PeakFinder do
       expect(peak_finder.peak).to eql("no peak")
     end
   end
+
+  context "both sides have an equal peak" do 
+    it "returns peak on both sides with the peak value" do 
+      peak_finder = PeakFinder.new([2,2,2,1,2,2,2])
+      expect(peak_finder.peak).to eql("peak on both sides: 2")
+    end
+  end
 end
